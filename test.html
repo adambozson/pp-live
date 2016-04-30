@@ -1,0 +1,21 @@
+<html>
+<head>
+  <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+</head>
+<body>
+  <img class="live" data-refresh=2000 src="https://vistar-capture.web.cern.ch/vistar-capture/sps1.png" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <script>
+    $(function() {
+      $("img.live").each(function() {
+        var img = $(this);
+        var src = img.attr("src").split('?')[0];
+        setInterval(function() {
+          img.attr("src", src + '?t=' + new Date().getTime());
+        }, img.data("refresh"));
+      });
+    });
+  </script>
+</body>
+</html>

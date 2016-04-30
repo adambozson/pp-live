@@ -17,7 +17,8 @@
 
 
 // Override theme settings (see ../template/settings.scss)
-$backgroundColor: #202a30;
+$backgroundColor: #202a30; // Slate grey
+// $backgroundColor: #000; // Black
 
 $mainFont: 'Open Sans', sans-serif;
 $linkColor: #eb641e;
@@ -28,6 +29,7 @@ $headingLetterSpacing: -0.03em;
 $headingTextTransform: none;
 $selectionBackgroundColor: #eb641e;
 $mainFontSize: 30px;
+$headingMargin: 0px;
 
 
 // Theme template ------------------------------

@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<meta http-equiv="cache-control" content="no-cache">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<title>RHUL Particle Physics</title>
@@ -13,31 +14,43 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<img src="http://atlas-live.cern.ch/live.png" />
+					<img class="live" data-refresh=1000 src="http://atlas-live.cern.ch/live.png" />
 				</section>
 				<section>
-					<img src='https://vistar-capture.web.cern.ch/vistar-capture/lhc1.png' />
+					<img class="live" data-refresh=8000 src='https://vistar-capture.web.cern.ch/vistar-capture/lhc1.png' />
 				</section>
 				<section>
-					<img src='https://vistar-capture.web.cern.ch/vistar-capture/lhc3.png' />
+					<img class="live" data-refresh=8000 src='https://vistar-capture.web.cern.ch/vistar-capture/lhc3.png' />
 				</section>
 				<section>
-					<img src='https://vistar-capture.web.cern.ch/vistar-capture/lhclumi.png' />
+					<img class="live" data-refresh=8000 src='https://vistar-capture.web.cern.ch/vistar-capture/lhclumi.png' />
 				</section>
 				<section>
-					<img src='https://vistar-capture.web.cern.ch/vistar-capture/lhcconfig.png' />
+					<img class="live" data-refresh=8000 src='https://vistar-capture.web.cern.ch/vistar-capture/lhcconfig.png' />
 				</section>
 				<section>
-					<img src='https://vistar-capture.web.cern.ch/vistar-capture/lhccoord.png' />
+					<img class="live" data-refresh=8000 src='https://vistar-capture.web.cern.ch/vistar-capture/lhccoord.png' />
 				</section>
 				<section>
-					<img src='https://vistar-capture.web.cern.ch/vistar-capture/sps1.png' />
+					<img class="live" data-refresh=2000 src='https://vistar-capture.web.cern.ch/vistar-capture/sps1.png' />
 				</section>
 			</div>
 		</div>
 
-		<script src="js/reveal.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+		<script>
+			$(function() {
+				$("img.live").each(function() {
+					var img = $(this);
+					var src = img.attr("src").split('?')[0];
+					setInterval(function() {
+						img.attr("src", src + '?t=' + new Date().getTime());
+					}, img.data("refresh"));
+				});
+			});
+		</script>
 
+		<script src="js/reveal.js"></script>
 		<script>
 			Reveal.initialize({
 				width: 1024,
@@ -48,9 +61,10 @@
 				slideNumber: true,
 				loop: true,
 				autoSlide: 10000,
-				autoSlideStoppable: true,
+				autoSlideStoppable: false,
 				transition: 'concave',
 				transitionSpeed: 'slow',
+				maxScale: 3,
 			});
 		</script>
 	</body>
