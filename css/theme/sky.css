@@ -285,6 +285,30 @@ body {
 /*********************************************
  * PROGRESS BAR
  *********************************************/
+@-webkit-keyframes advance-progress {
+  0% {
+    width: 0%; }
+  100% {
+    width: 100%; } }
+
+@-moz-keyframes advance-progress {
+  0% {
+    width: 0%; }
+  100% {
+    width: 100%; } }
+
+@-o-keyframes advance-progress {
+  0% {
+    width: 0%; }
+  100% {
+    width: 100%; } }
+
+@keyframes advance-progress {
+  0% {
+    width: 0%; }
+  100% {
+    width: 100%; } }
+
 .reveal .progress {
   background: rgba(0, 0, 0, 0.2); }
 

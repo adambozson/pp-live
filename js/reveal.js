@@ -1031,6 +1031,10 @@
 
 		if( config.progress && dom.progress ) {
 			dom.progress.addEventListener( 'click', onProgressClicked, false );
+			dom.progressbar.addEventListener( 'webkitAnimationEnd', function() {
+					this.style.animationName = '';
+					this.style.width = '0%';
+			}, false);
 		}
 
 		if( config.focusBodyOnPageVisibilityChange ) {
@@ -2570,7 +2574,10 @@
 		// Update progress if enabled
 		if( config.progress && dom.progressbar ) {
 
-			dom.progressbar.style.width = getProgress() * dom.wrapper.offsetWidth + 'px';
+			// dom.progressbar.style.width = getProgress() * dom.wrapper.offsetWidth + 'px';
+			var timeBuffer = autoSlide * 0.01; // Allow animation to finish before changing slide
+			var animationTime = autoSlide - timeBuffer;
+			dom.progressbar.style.animation='advance-progress ' + animationTime +'ms linear';
 
 		}
 
