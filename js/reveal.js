@@ -2140,6 +2140,11 @@
 		var indexhBefore = indexh || 0,
 			indexvBefore = indexv || 0;
 
+		if ( config.progress && dom.progressbar ) {
+			dom.progressbar.style.animation='';
+			dom.progressbar.width = '0px';
+		}
+
 		// Activate and transition to the new slide
 		indexh = updateSlides( HORIZONTAL_SLIDES_SELECTOR, h === undefined ? indexh : h );
 		indexv = updateSlides( VERTICAL_SLIDES_SELECTOR, v === undefined ? indexv : v );
@@ -2570,11 +2575,8 @@
 	 * Updates the progress bar to reflect the current slide.
 	 */
 	function updateProgress() {
-
 		// Update progress if enabled
 		if( config.progress && dom.progressbar ) {
-
-			// dom.progressbar.style.width = getProgress() * dom.wrapper.offsetWidth + 'px';
 			var timeBuffer = autoSlide * 0.01; // Allow animation to finish before changing slide
 			var animationTime = autoSlide - timeBuffer;
 			dom.progressbar.style.animation='advance-progress ' + animationTime +'ms linear';
