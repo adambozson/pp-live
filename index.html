@@ -17,6 +17,12 @@
 					<img class="live plain" data-refresh=1000 src='http://atlas-live.cern.ch/live.png' />
 				</section>
 				<section>
+					<h2>LHC offline due to anti-science weasel</h2>
+					<br />
+					<img width="400" src="media/weasel.jpg" />
+					<p>Expecting beams on Thursday morning</p>
+				</section>
+				<section>
 					<img class="live plain" data-refresh=8000 src='https://vistar-capture.web.cern.ch/vistar-capture/lhc1.png' />
 				</section>
 				<section>
@@ -32,11 +38,21 @@
 					<img class="live plain" data-refresh=8000 src='https://vistar-capture.web.cern.ch/vistar-capture/lhccoord.png' />
 				</section>
 				<section>
-					<img class="live plain" data-refresh=2000 src='https://vistar-capture.web.cern.ch/vistar-capture/sps1.png' width=1024 hegiht=768/>
+					<img class="live plain" data-refresh=2000 src='https://vistar-capture.web.cern.ch/vistar-capture/sps1.png' height="768"/>
+				</section>
+				<section>
+					<img class="live plain" data-refresh=20000 height="768" src="http://atf.kek.jp/collab/md/atf_status/main_status_image.php" />
+				</section>
+				<section>
+					<img class="live plain" data-refresh=60000 height="768" src="http://j-parc.jp/ctrl/jkwww/accsts/li/rss/BeamDestShot.png" />
+				</section>
+				<section>
+					<img class="live plain" data-refresh=60000 height="768" src="http://www-sk.icrr.u-tokyo.ac.jp/realtimemonitor/skev.gif" />
 				</section>
 			</div>
 		</div>
 
+		<!-- Script to update live images -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 		<script>
 			$(function() {
@@ -50,6 +66,7 @@
 			});
 		</script>
 
+		<!-- Configuration for the reveal.js presentation -->
 		<script src="js/reveal.js"></script>
 		<script>
 			Reveal.initialize({
@@ -60,8 +77,8 @@
 				controls: false,
 				slideNumber: true,
 				loop: true,
-				autoSlide: 15000,
-				autoSlideStoppable: false,
+				autoSlide: 12000,
+				autoSlideStoppable: true,
 				transition: 'concave',
 				transitionSpeed: 'slow',
 				maxScale: 3,
